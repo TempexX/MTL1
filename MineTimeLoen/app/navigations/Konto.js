@@ -4,7 +4,7 @@ import React from 'react'
 export default function Konto() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Konto2</Text> 
+      <Text>Konto1</Text> 
     </View>
   )
 }
