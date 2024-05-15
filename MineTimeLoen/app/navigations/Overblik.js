@@ -4,7 +4,7 @@ import React from 'react'
 export default function Overblik() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Overblik</Text>
+      <Text>Overblik1</Text>
     </View>
   )
 } 
