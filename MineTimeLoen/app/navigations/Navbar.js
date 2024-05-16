@@ -7,6 +7,7 @@ import Overblik from './Overblik.js';
 import MineData from './MineData.js';
 import Vagter from './Vagter.js';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 
@@ -17,16 +18,46 @@ export default function navbar() {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={{
+        tabBarStyle: {
+          height: 80,
+          paddingHorizontal: 5,
+          paddingTop: 10,
+          backgroundColor: 'rgba(35,35,38,1)',
+          position: 'absolute',
+          borderTopWidth: 1,
+          borderTopColor: 'rgba(35,35,38,1)'
+          
+      },
         headerShown:false,
-        tabBarIcon:({color,size})=>(
-          <FontAwesome name="tachometer" size={24} color={color} />
-        )
+        tabBarActiveTintColor: '#db1a5a',
+        
 
       }} >
-        <Tab.Screen name='Overblik' component={Overblik}/>
-        <Tab.Screen name='Vagter' component={Vagter}/>
-        <Tab.Screen name='Mine Data' component={MineData}/>
-        <Tab.Screen name='Konto' component={Konto}/>
+        <Tab.Screen name='Overblik' component={Overblik} 
+        options={{
+          tabBarIcon:({color,size})=>(
+            <FontAwesome name="tachometer" size={size} color={color} />
+          )
+        }}/>
+        
+        <Tab.Screen name='Vagter' component={Vagter} 
+        options={{
+          tabBarIcon:({color,size})=>(
+          <FontAwesome name="list-ol" size={size} color={color} />
+          )
+        }}/>
+        <Tab.Screen name='Mine Data' component={MineData} 
+        options={{
+          tabBarIcon:({color,size})=>(
+          <FontAwesome name="archive" size={size} color={color} />
+          )
+        }}/>
+        <Tab.Screen name='Konto' component={Konto} 
+        options={{
+          tabBarIcon:({color,size})=>(
+          <MaterialCommunityIcons name="account" size={size} color={color} />
+          )
+        }}/>
       </Tab.Navigator>
     </NavigationContainer>
   )
